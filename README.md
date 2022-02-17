@@ -1,9 +1,14 @@
 # CoffeLove
 
 "CoffeeLove" is a small mobile-friendly frontend project for mobile devices with a maximum width of 700px. It was programmed in react and react-bootstrap.
-With "Coffee love" , you can view, order and buy favourite coffee. 
+With "Coffee love" , you can view, order and buy favourite coffee: 
 
-##ATTENTION
+## Images
+<a href="https://ibb.co/1ZrYNmH"><img width="300px" src="https://i.ibb.co/7vnxD17/Bildschirmfoto-vom-2022-02-17-23-54-23.png" alt="Bildschirmfoto-vom-2022-02-17-23-54-23" border="0"></a>
+<a href="https://ibb.co/Bn02zvN"><img width="300px" src="https://i.ibb.co/5KbhMCF/Bildschirmfoto-vom-2022-02-17-23-55-08.png" alt="Bildschirmfoto-vom-2022-02-17-23-55-08" border="0"></a>
+<a href="https://ibb.co/rQJpDsg"><img width="300px" src="https://i.ibb.co/YNGdHZ6/Bildschirmfoto-vom-2022-02-17-23-56-00.png" alt="Bildschirmfoto-vom-2022-02-17-23-56-00" border="0"></a>
+
+## ATTENTION
 This project was designed for mobile-devices only. I know that this could be done with react-native but for now, I am very convinced that this application can be seen as a web-application which refers to mobile devices giving them an "IOS/Android-App"-like feeling. However, contribution are welcomed and features can be added in order to support larger devices.
 
 ## Features
