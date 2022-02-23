@@ -1,11 +1,11 @@
-import { Card, Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import './Home.stylesheet.css';
 const Home = () => {
     return(
     <>
     <main>
         <h1>Popular Drinks</h1>
-            <section class="section-container"> 
+            <section className="section-container"> 
                 <article>
                     <Card className="card">
                         <Card.Body className="card-body">
@@ -36,7 +36,7 @@ const Home = () => {
                 </article>
                 <article>
                     <Card className="card">
-                        <Card.Body className="card-body" data-price="20" >
+                        <Card.Body className="card-body" data-price="20€" >
                             <Card.Img className="card-image" variant="top" src='https://media.istockphoto.com/photos/cortado-coffee-with-coffee-beans-next-to-it-traditional-coffee-in-picture-id1355995290?k=20&m=1355995290&s=612x612&w=0&h=_CjQJ4KRckVlmrcZdEFNmt8Di_HLYTqZfzAa75DJ-J0=' />
                             <Card.Text className="card-text" >
                                Cortado

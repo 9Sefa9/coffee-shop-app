@@ -30,25 +30,31 @@ article{
     box-shadow: 0px 0px 5px black; 
 }
 .card-body{
-    padding:0.5rem;
-    position:relative;   
+    padding:0.5rem;  
 }
-.card-body::after:hover{
-    position:absolute;
-    content: attr(data-price);
-    bottom:0;
-    right:0;
-    left:0;
-    top:15rem;
-    background-color: red;
-    border-radius: 0 0 1rem 1rem;
-    text-align:center;
-}
+
 .card-text{
     text-align: center;
     background-color:#E59958;
     border-radius: 0rem 0rem 1rem 1rem;
     padding:5%;
+}
+.card-body:hover::after{
+    position:absolute;
+    content: attr(data-price);
+    bottom:0;
+    right:0;
+    left:0;
+    top:0;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size: 2rem;
+    background-color:#ffcb9d;
+    opacity: 0.85;
+    animation: 250ms ease-in 1 FadeIn;
+    border-radius: 1rem;
+    text-align:center;
 }
 .card-image{
     border-radius: 1rem 1rem 0rem 0rem;
