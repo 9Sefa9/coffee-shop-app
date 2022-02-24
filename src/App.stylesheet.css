@@ -8,6 +8,7 @@
     100% {
       opacity:1;
     }
+    
   }
   html{
     animation: 400ms ease-in 1 FadeIn;

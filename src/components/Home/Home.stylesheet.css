@@ -24,38 +24,60 @@ article{
     animation: 1s ease-in 1 FadeIn;
 }
 .card{
-    text-align:start;
+    position:relative;
     border-color:black;
     border-radius: 1rem;
     box-shadow: 0px 0px 5px black; 
+    overflow:hidden;
 }
 .card-body{
-    padding:0.5rem;  
+    padding:0;  
 }
 
 .card-text{
     text-align: center;
-    background-color:#E59958;
-    border-radius: 0rem 0rem 1rem 1rem;
-    padding:5%;
+    background-color:#E59958; 
+    font-weight: bold;
 }
-.card-body:hover::after{
-    position:absolute;
+
+.card-body::after{
     content: attr(data-price);
+    position:absolute;
     bottom:0;
-    right:0;
-    left:0;
-    top:0;
+    width:100%;
     display:flex;
     justify-content:space-evenly;
     align-items: center;
-    font-size: 2rem;
-    background-color:#ffcb9d;
-    opacity: 0.85;
-    animation: 250ms ease-in 1 FadeIn;
-    border-radius: 1rem;
+    font-size: 1.5rem;
+    background-color:#E59958;
+    border-radius:  0 0 1rem 1rem;
     text-align:center;
+    opacity: 0;
+}
+.card-body:hover::after{
+    opacity: 1;
+    position:relative;
+    transition:all 800ms;
+    
 }
 .card-image{
     border-radius: 1rem 1rem 0rem 0rem;
+}
+.buy-button{
+    position:absolute;
+    top:0;
+    right:0;
+    margin-right:0;
+    border-radius: 3rem;
+    background-color:transparent;
+    border:none;
+}
+.buy-button:hover{
+    position:absolute;
+    border:3px solid white;
+    border-radius: 3rem;
+    background-color:#c55e05;
+}
+.buy-button:focus{
+   outline: 2px solid red;
 }
