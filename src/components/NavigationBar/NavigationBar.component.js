@@ -1,14 +1,14 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './NavigationBar.stylesheet.css';
-import {AiOutlineShoppingCart} from 'react-icons/ai'
 import Logo from '../../logo.png';
+import Cart from '../Cart/Cart.component.js';
 const NavigationBar = () => {
     return(
         <>
            <Navbar className="navbar" sticky="top" collapseOnSelect expand="sm" bg="light" variant="light">
             <Container className="navbar-main-container">
-            <div className="navbar-shopping-cart" ><AiOutlineShoppingCart size={50} /></div>
+            <Cart />
             <Navbar.Brand href="/home"><img className="navbar-brand-logo" src={Logo}/></Navbar.Brand>
             <Navbar.Toggle className="navbar-toggle" aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
