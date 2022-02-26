@@ -2,7 +2,7 @@ import './Home.stylesheet.css';
 import {useReducer} from 'react';
 import { Button, Card } from 'react-bootstrap';
 import {AiOutlinePlusCircle} from 'react-icons/ai';
-import { addItem,increaseCartSize } from '../Cart/Cart.component';
+import {increaseCartSize } from '../Cart/Cart.component';
 //import CartSlice,{addItem} from '../Cart/Cart.redux.js';
 
 const Home = () => {

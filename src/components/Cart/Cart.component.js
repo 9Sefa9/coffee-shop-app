@@ -1,19 +1,21 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 //import CartSlice from '../Cart/Cart.redux.js';
 
 const Cart = () => {
 
-    const [state, setState] = useState();
+    const [cartSize, setCartSize] = useState();
+
     useEffect(() => {
-        setState(localStorage.getItem('cartSize'));
-    }, [state])
+    
+        setCartSize(localStorage.getItem('cartSize'));
+    }, [cartSize])
     
    
     return (
         <div className='navbar-cart-container' >
             <AiOutlineShoppingCart size={50} />
-            <span>{state}</span>
+            <span>{cartSize}</span>
         </div>
     );
 
