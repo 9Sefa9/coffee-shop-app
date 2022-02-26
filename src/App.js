@@ -6,12 +6,11 @@ const Home = React.lazy(() => import('./components/Home/Home.component.js'));
 const Footer = React.lazy(() => import('./components/Footer/Footer.component.js'))
 
 function App() {
-  const [cartSize, setCartSize] = useState(localStorage.getItem('cartSize'));
 
   return (
     <>
       <CoffeeLoveContext.Provider value={{
-        cartSize: cartSize
+        cartSize: 1
       }}>
         <Suspense fallback={<div>RESIZE DESKTOP</div>}>
           <NavigationBar />
