@@ -1,16 +1,16 @@
 import './Home.stylesheet.css';
-import {useReducer} from 'react';
 import { Button, Card } from 'react-bootstrap';
 import {AiOutlinePlusCircle} from 'react-icons/ai';
-import {increaseCartSize } from '../Cart/Cart.component';
+import { addItem, increaseCartSize } from '../Cart/Cart.redux';
+import { useContext } from 'react';
+import coffeeloveContext from '../../context/coffeelove.context';
 //import CartSlice,{addItem} from '../Cart/Cart.redux.js';
 
 const Home = () => {
-    //const [state, dispatch] = useReducer(CartSlice);
+    const contextValue = useContext(coffeeloveContext);
     const buyButtonHandler = event =>{
         event.preventDefault();
-        //dispatch(addItem(event.timeStamp));
-        increaseCartSize(1);
+        contextValue.cartDispatch(increaseCartSize(1));
     }
     return(
     <>
