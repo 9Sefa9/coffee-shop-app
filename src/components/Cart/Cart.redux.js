@@ -12,45 +12,38 @@ const cartSlice = createSlice({
   reducers: {
 
     addItem: (state, action) => {
+      //Adding item to shopping cart
       let isDuplicateItem = false;
 
       state.cartContent.forEach((e, i) => {
-        if (e.img === action.payload.img) {
-          //@TODO not working.
-          e.quantity = 1;
+        if (e.id === action.payload.id) {
+          e.quantity += 1;
           isDuplicateItem = true;
-          console.log("quantity! ");
-          return;
+          return
         }
       });
 
-      /*if (isDuplicateItem) {
-        if(originalItem.quantity === 'undefined'){
-          originalItem.quantity = 0;
-        }else{
-          originalItem.quantity += 1;
-        }
-      }*/
-      if (!isDuplicateItem) {
-        console.log("not duplicated");
+      
+      if(isDuplicateItem){
+        localStorage.setItem("cartContent", JSON.stringify(state.cartContent));
+      }else{
         const newCartContent = [...state.cartContent, action.payload];
         state.cartContent = newCartContent;
         localStorage.setItem("cartContent", JSON.stringify(newCartContent));
       }
 
-    },
-    removeItem: (state, action) => {
-
-    },
-    increaseCartSize: (state, action) => {
-      const newCartSize = state.cartSize + action.payload;
+      //increasing shopping-cart size
+      const newCartSize = state.cartSize + 1;
       state.cartSize = newCartSize;
       localStorage.setItem('cartSize', newCartSize);
+
+    },
+    showToast: (state, action) => {
 
     }
   },
 });
 
 export const cartContent = (state) => state.cartContent;
-export const { addItem, removeItem, increaseCartSize } = cartSlice.actions;
+export const { addItem, removeItem } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -1,19 +1,31 @@
 import './Home.stylesheet.css';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Toast } from 'react-bootstrap';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-import { addItem, increaseCartSize } from '../Cart/Cart.redux';
-import { useContext } from 'react';
+import { addItem } from '../Cart/Cart.redux';
+import { useContext, useState } from 'react';
 import coffeeloveContext from '../../context/coffeelove.context';
 //import CartSlice,{addItem} from '../Cart/Cart.redux.js';
 
 const Home = () => {
 
     const contextValue = useContext(coffeeloveContext);
+    const [toast, setToast] = useState({ notify: false, lastAddedItem: null });
     const buyButtonHandler = (event, item) => {
         event.preventDefault();
-
-        contextValue.cartDispatch(increaseCartSize(1));
+        /*<Toast show={showA} onClose={toggleShowA}>
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+            <strong className="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+          </Toast.Header>
+          <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+        </Toast>*/
         contextValue.cartDispatch(addItem(item));
+        setToast({ notify: true, lastAddedItem: item });
     }
     return (
         <>
@@ -25,8 +37,10 @@ const Home = () => {
                             <Card.Body className="card-body" data-price="20€" onClick={(e) => {
                                 buyButtonHandler(e,
                                     {
+                                        id: 0,
                                         img: 'https://www.westend61.de/images/0000686126pw/cappuccino-with-milk-froth-heart-AIF000041.jpg',
-                                        price: '20'
+                                        price: '20',
+                                        quantity: 1
                                     }
                                 )
                             }}>
@@ -41,8 +55,10 @@ const Home = () => {
                             <Card.Body className="card-body" data-price="25€" onClick={(e) => {
                                 buyButtonHandler(e,
                                     {
+                                        id: 1,
                                         img: 'https://thumbs.dreamstime.com/b/cup-black-coffee-spilled-coffee-beans-coffee-break-64001994.jpg',
-                                        price: '25'
+                                        price: '25',
+                                        quantity: 1
                                     }
                                 )
                             }}>
@@ -71,6 +87,20 @@ const Home = () => {
                         </Card>
                     </article>
                 </section>
+                <Toast className="toast-item-notification" autohide show={toast.notify} onClose={() => { setToast({ ...toast, notify: false }) }}>
+                    <Toast.Header>
+                        <img
+                            src={toast.lastAddedItem === null ? '' : toast.lastAddedItem.img}
+                            alt=""
+                            width={50}
+                            height={50}
+                        />
+                        <strong className="me-auto">Bootstrap</strong>
+                        <small>11 mins ago</small>
+                    </Toast.Header>
+                    <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+                </Toast>
+
             </main>
         </>
     );

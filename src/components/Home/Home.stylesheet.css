@@ -81,3 +81,10 @@ article{
 .buy-button:focus{
    outline: 2px solid red;
 }
+.toast-item-notification{
+    position: fixed;
+    z-index: 99999;
+    bottom:0;
+    right:0;
+
+}
